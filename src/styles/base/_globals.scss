@@ -1,0 +1,16 @@
+.App {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr;
+  height: 100%;
+  min-height: 100vh;
+  .ASidebar {
+    grid-column: 1;
+  }
+  .AHeader {
+    grid-column: 1 / -1;
+  }
+  .AFooter {
+    grid-column: 1 / -1;
+  }
+}

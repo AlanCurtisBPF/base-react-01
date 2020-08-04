@@ -1,0 +1,10 @@
+// use @extend .f-center to use mixin:  @extend $<mixin-classname>
+.f-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-red {
+  background-color: red;
+}
