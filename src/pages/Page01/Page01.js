@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AUser from "../../components/AUser/AUser";
 import AUserEdit from "../../components/AUserEdit/AUserEdit";
+import AUsers from "../../components/AUsers/AUsers";
 
 const Page01 = () => {
   const [users, setUsers] = useState([]);
@@ -10,6 +11,7 @@ const Page01 = () => {
     axios
       .get(`http://localhost:4000/graphql?query={customers{name,age}}`)
       .then((res) => {
+        console.log("back", res.data.data.customers);
         setUsers(res.data.data.customers);
       });
   }, []);
@@ -18,11 +20,10 @@ const Page01 = () => {
     <div className="Page01">
       Page01
       <div>
-        {users.map((user, i) => (
-          <div key={i}>{user.name}</div>
-        ))}
-        <AUser></AUser>
-        <AUserEdit></AUserEdit>
+        {users ? users.map((user, i) => <div key={i}>{user.name}</div>) : null}
+        <AUser />
+        <AUserEdit />
+        <AUsers />
       </div>
     </div>
   );
