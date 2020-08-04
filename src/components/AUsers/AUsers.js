@@ -4,7 +4,6 @@ import { startGetUsers } from "../../redux/users/usersActions";
 
 const AUsers = (props) => {
   useEffect(() => {
-    console.log("Mounted users");
     props.startGetUsers();
   }, []);
 
